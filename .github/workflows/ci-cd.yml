@@ -1,0 +1,15 @@
+name: CI/CD Workflow
+
+on:
+  push:
+      branches:
+        - main
+    pull_request:
+      branches:
+        - main
+
+jobs:
+  test: "Tests"
+    steps:
+      - run: npm ci
+      - run: npm test
