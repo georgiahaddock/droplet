@@ -1,19 +1,23 @@
 import React from 'react';
-import Card1 from './Card';
+import Artwork from './Artwork.react';
+import { Row, Col } from 'react-bootstrap';
 
 
-function Gallery(){
+function Gallery( { artworks }){
     return (
-        <div>
-            <h2>Gallery</h2>
-            <div className = "flex">
-                <Card1></Card1>
-                <Card1></Card1>
-                <Card1></Card1>
-                <Card1></Card1>
-                <Card1></Card1>
-            </div>
-        </div>
+        <Row className="justify-content-center">
+        {artworks.map((artwork, index) => (
+        <Col xs={12} sm={6} md={4} key={index}>
+          <Artwork
+            key={index}
+            imageUrl={artwork.imageUrl}
+            artistName={artwork.artistName}
+            date={artwork.date}
+            shortDesc={artwork.shortDesc}
+          />
+          </Col>
+        ))}
+      </Row>
     )
 }
 
