@@ -1,18 +1,18 @@
 import React from 'react';
-import Gallery from './components/Gallery.js';
-import CatCarousel from './components/CatCarousel.js';
+import { Route, Routes } from "react-router-dom";
+import Landing from "./pages/LandingPage";
+import Banner from "./components/Banner"
 
 
 function App(){
     return (
-        <div>
-            <h2>My Cards</h2>
-            <div className = "flex">
-                <Gallery></Gallery>
-                <CatCarousel></CatCarousel>
-            </div>
+        <div className='flex'>
+            <Banner />
+                    <Routes>
+                        <Route path="/landing" element={<Landing className="routes"/>}/>
+                    </Routes>
         </div>
-    )
+    );
 }
 
 export default App;
